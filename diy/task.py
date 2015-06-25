@@ -5,7 +5,7 @@ import memcache
 import tornado.gen
 import tornado.httpclient
 
-IP = os.environ['OPENSHIFT_DIY_IP']
+IP = '127.0.0.1'
 
 def getSUV():
     return '='.join(['SUV', str(int(time.time()*1000000) + random.randint(0, 1000))])

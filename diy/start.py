@@ -10,7 +10,8 @@ from jinja2_tornado import JinjaLoader
 from urls import urls
 from task import get_cookies
 
-IP = os.environ['OPENSHIFT_DIY_IP']
+IP = '127.0.0.1'
+port = '8000'
 
 class Application(tornado.web.Application):
     def __init__(self, **kwargs):
@@ -26,7 +27,8 @@ application = Application(
 )
 
 if __name__ == "__main__":
-    port = int(os.environ['OPENSHIFT_DIY_PORT'])
+    port = int(port)
     application.listen(port, IP)
+    print("Listening...")
     tornado.ioloop.PeriodicCallback(get_cookies, 6*60*60*1000).start()
     tornado.ioloop.IOLoop.instance().start()
