@@ -1,0 +1,10 @@
+Jinja2==2.7.3
+MarkupSafe==0.23
+backports.ssl-match-hostname==3.4.0.2
+certifi==2015.04.28
+lxml==3.4.4
+python-dateutil==2.4.2
+python-memcached==1.54
+six==1.9.0
+tornado==4.2
+wsgiref==0.1.2
