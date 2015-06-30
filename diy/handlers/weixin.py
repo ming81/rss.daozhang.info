@@ -29,9 +29,9 @@ class WeixinHandler(tornado.web.RequestHandler):
             mc = self.application.mc
 
             eqs, ekv = get_encrypted(openid)
-            print("eqs: " + eqs)
             url = WINXIN_URL % (openid, eqs, ekv, int(time.time()*1000))
             client = tornado.httpclient.AsyncHTTPClient()
+            url = str(url)
 
             cookies = mc.get('cookie') # 从缓存中获取cookie
             headers = random.choice(cookies)
